@@ -3,4 +3,10 @@
 		h2 Keyholder List
 
 	.container(ng:controller="Keys")
-		| {{ screenings }}
+		table.table
+			tr
+				th Name
+				th Key
+			tr(ng:repeat="screening in screenings")
+				td {{ screening.name() }}
+				td {{ screening.screening_key() }}

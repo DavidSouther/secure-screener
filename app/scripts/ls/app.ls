@@ -20,3 +20,4 @@ angular.module \screener, <[ jefri jquery ]>, !($routeProvider)->
 angular.screenermap do
 	menu: "navbar navbar-inverse navbar-fixed-top"
 	content: "container"
+	table: "table-striped"
