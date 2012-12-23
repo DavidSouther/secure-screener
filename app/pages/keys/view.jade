@@ -8,7 +8,9 @@
 				th Name
 				th Key
 			tr(ng:repeat="screening in screenings")
-				td {{ screening.name() }}
-				td {{ screening.screening_key() }}
+				td
+					inline(entity="screening", property="name")
+				td
+					inline(entity="screening", property="screening_key")
 
 		.create(ng:click="create()") New Key
