@@ -15,6 +15,9 @@ screener = (JEFRi)->
 
 			@loaded <: @screenings
 
+		save: !->
+			JEFRi.save @screenings
+
 		create: !->
 			@screenings.push JEFRi.build \Key, {name: "New Screener", screening_key: "blank"}
 			@loaded <: @screenings
