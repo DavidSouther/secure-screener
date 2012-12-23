@@ -1,0 +1,20 @@
+{
+    "attributes": {},
+    "entities": {
+        "Key": {
+            "key": "key_id",
+            "properties": {
+                "key_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "screening_key": {
+                    "type": "string"
+                }
+            },
+            "relationships": {}
+        }
+    }
+}
