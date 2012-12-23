@@ -12,7 +12,7 @@ angular.classmap = !(module, map)-->
 angular.screenermap = angular.classmap \screener
 
 
-angular.module \screener, <[ jefri jquery ]>, !($routeProvider)->
+angular.module \screener, <[ jefri jquery ui ]>, !($routeProvider)->
 	$routeProvider
 		.when '/', template: jQuery.template \#keys
 		.when '/keys', template: jQuery.template \#keys
