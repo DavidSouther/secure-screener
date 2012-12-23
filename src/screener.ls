@@ -5,4 +5,6 @@ server.get '/', !(req, res)->
 
 server.use '/', express.static 'build/'
 
+server.jefri.runtime.load 'http://localhost:3000/secure-screener.json'
+
 server.listen 3000

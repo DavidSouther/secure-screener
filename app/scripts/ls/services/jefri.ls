@@ -12,7 +12,7 @@ angular.module \jefri, []
 				s.execute which, t
 
 			save: (ents)->
-				@run 'persist', ets
+				@run 'persist', ents
 
 			get: (spec={})->
 				@run 'get', spec
