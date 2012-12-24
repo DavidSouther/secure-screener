@@ -19,6 +19,7 @@ angular.module \screener, <[ jefri jquery ui ]>, !($routeProvider)->
 		.when '/login', template: jQuery.template \#login
 
 angular.screenermap do
+	navDrop: "btn btn-navbar"
 	menu: "navbar navbar-inverse navbar-fixed-top"
 	content: "container"
 	table: "table-striped"
