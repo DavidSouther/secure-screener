@@ -17,11 +17,11 @@ angular.module \jefri, []
 			get: (spec={})->
 				@run 'get', spec
 
-			config: !(endpoint="http://localhost:3000/")->
+			config: !(endpoint="/")->
 				@settings.ENDPOINT = endpoint
 
 		rt <<<
 			settings:
-				ENDPOINT: "http://localhost:3000/"
+				ENDPOINT: "/"
 
 		rt
