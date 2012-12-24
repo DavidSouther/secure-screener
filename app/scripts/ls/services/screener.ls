@@ -5,15 +5,9 @@ screener = (JEFRi)->
 				@load!
 
 		load: !->
-			screenings = [
-				["abcd", "David"],
-				["1234", "Stan"],
-				["asfd", "Jon"]
-			]
-			@screenings = for screening in screenings
-				JEFRi.build \Key, {name: screening[1], screening_key: screening[0]}
-
-			@loaded <: @screenings
+			JEFRi.get {_type: \Key } .then !~>
+				@screenings = JEFRi.find _type: \Key
+				@loaded <: @screenings
 
 		save: !->
 			JEFRi.save @screenings
