@@ -16,6 +16,7 @@ angular.module \screener, <[ jefri jquery ui ]>, !($routeProvider)->
 	$routeProvider
 		.when '/', template: jQuery.template \#keys
 		.when '/keys', template: jQuery.template \#keys
+		.when '/login', template: jQuery.template \#login
 
 angular.screenermap do
 	menu: "navbar navbar-inverse navbar-fixed-top"
