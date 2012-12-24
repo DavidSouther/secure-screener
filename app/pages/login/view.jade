@@ -1,0 +1,29 @@
+#login
+	
+	.container
+		h2 login
+		p Enter your username and password
+
+	.container(ng:controller="Login")
+		.rejection(ng:show="reject")
+			| Sorry, that key is invalid.
+		form.form-horizontal
+			.control-group
+				label.control-label(for="inputKey") Key
+				.controls
+					input#inputKey(ng-model="key", type="text", placeholder="Your Key")
+			.control-group
+				label.control-label(for="inputName") Name
+				.controls
+					input#inputName(type="text", placeholder="Your Name")
+			.control-group
+				label.control-label(for="inputEmail") Email
+				.controls
+					input#inputEmail(type="text", placeholder="Your Email")
+			.control-group
+				label.control-label(for="inputReason") Reason for Watching
+				.controls
+					input#inputReason(type="text", placeholder="Reason")
+			.control-group
+				.controls
+					button.btn(ng:click="check(key)", type="submit") Watch
