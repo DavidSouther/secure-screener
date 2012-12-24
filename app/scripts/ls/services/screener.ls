@@ -16,6 +16,12 @@ screener = (JEFRi)->
 			@screenings.push JEFRi.build \Key, {name: "New Screener", screening_key: "blank"}
 			@loaded <: @screenings
 
+		check: (key)->
+			for screening in @screenings
+				if screening.screening_key! is key
+					return true
+			false
+
 		screenings: []
 
 	new Screener!
