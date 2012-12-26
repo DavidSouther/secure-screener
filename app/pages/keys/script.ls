@@ -1,4 +1,6 @@
 keys = !($scope, Screener)->
+	# Inadvertently, all the behaviors the view needs happen to be
+	# methods in the Screener service.
 	$scope <<<
 		screenings: Screener.screenings
 		create: Screener.create
@@ -12,6 +14,7 @@ keys = !($scope, Screener)->
 angular.module \screener
 	.controller \Keys, [\$rootScope, \Screener, keys]
 
+# Style some buttons!
 angular.screenermap do
 	create: "btn btn-primary"
 	save: "btn"

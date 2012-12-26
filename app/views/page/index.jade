@@ -2,14 +2,17 @@
 html(lang="en")
 	head
 		meta(charset="utf-8")
+		//- The viewport meta tells mobile browsers to render sanely.
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 		title Secure Screener
+		//- Most of our styles for this app come from bootstrap.
 		link(rel="stylesheet", href="vendors/bootstrap/docs/assets/css/bootstrap.css")
 		link(rel="stylesheet", href="vendors/bootstrap/docs/assets/css/bootstrap-responsive.css")
 		link(rel="stylesheet", href="styles/screener.css")
 
 		//- In Dependency order, or close enough.
 		script(src="vendors/jquery/jquery.min.js")
+		//- A tool to pull bits of HTML from #templates.
 		script
 			jQuery.template = function(tplSel){
 				return jQuery("#templates " + tplSel).html()
@@ -20,17 +23,23 @@ html(lang="en")
 		script(src="vendors/superscore/lib/superscore.min.js")
 		script(src="vendors/bootstrap/docs/assets/js/bootstrap.min.js")
 
+		//- The JEFRi libraries
 		script(src="vendors/jefri/min.js")
 		script(src="vendors/jefri/stores/min.js")
 
+		//- Load angular last, so all the helper dependencies are available.s
 		script(src="vendors/AngularJS/angular.js")
 		script(src="vendors/angular-ui/build/angular-ui.min.js")
 
 	body
+		//- The Angular application should not contain #templates, as we don't want them 
+		//- compiled inadvertently.
 		.app(ng:app="screener")
+			//- This menu bar markup comes from Bootstrap's responsive header.
 			.menu
 				.navbar-inner
 					.container
+						//- The navDrop button expands and collapses the menu when responsively small.
 						button.navDrop(type="button", data-toggle="collapse", data-target=".nav-collapse")
 							span.icon-bar
 							span.icon-bar
@@ -39,24 +48,24 @@ html(lang="en")
 						.nav-collapse
 							ul.nav
 								li
+									//- Add new top-level menu items here
 									a(href="#/keys") Keyholder List
 									a(href="#/login") Login Page
 
 			.content
 				ng:view
 
+		//- The bare template markup for angular
 		#templates(style="display:none")
 			include ../pages.html
 
 			//- include ../templates.html
 
+		//- App specific angular scripts. All our app is here.
 		script(src="scripts/app.js")
 		script(src="scripts/services.js")
-		script(src="scripts/filters.js")
+		//- script(src="scripts/filters.js")
 		//- script(src="scripts/controllers.js")
-		script(src="scripts/directives.js")
+		//- script(src="scripts/directives.js")
 		script(src="scripts/components.js")
 		script(src="scripts/pages.js")
-
-		//- script(src="dist/modeler.min.js")
-		//- script(src="dist/modeler.ls.js")

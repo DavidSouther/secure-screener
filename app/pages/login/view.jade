@@ -5,8 +5,10 @@
 		p Enter your username and password
 
 	.container(ng:controller="Login")
+		//- Rejection pop-up, for incorrect keys.
 		.rejection(ng:show="reject")
 			| Sorry, that key is invalid.
+		//- There's a log of markup for this. Should be worked on.
 		form.form-horizontal
 			.control-group
 				label.control-label(for="inputKey") Key

@@ -4,6 +4,7 @@
 		p This is a list of all of the keys that people have. Be sure not to give these keys out.
 
 	.container(ng:controller="Keys")
+		//- A table listing keys.
 		table.table
 			tr
 				th Name
@@ -14,6 +15,7 @@
 				td
 					inline(entity="screening", property="screening_key")
 
+		//- The buttons are fairly self-explanatory in their actions
 		.create(ng:click="create()") New Key
 		.save(ng:click="save()") Save
 		.load(ng:click="load()") Load

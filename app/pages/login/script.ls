@@ -1,10 +1,11 @@
 login = !($scope, Screener)->
 	$scope <<<
 		check: !(key)->
-			gate = Screener.check key
-			if gate
+			# Pass on to the watch page if it's a valid page.
+			if Screener.check key
 				document.location = "#/watch"
 			else
+				# If it's not a valid key, flash a reject message.
 				$scope.reject = yes
 				# If we aren't updating the view, update the view.
 				unless $scope.$$phase then $scope.$apply!
